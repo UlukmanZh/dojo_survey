@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% block title %}
+{{ block.super }} - Results
+{% endblock title %} 
+
+{% block content %}
+
+<div id="container" style="border: solid; padding: 15px; width: 600px; margin: 0 auto;">
+    <form action="/back" method="post">
+        {% csrf_token %}
+        <h1>Submitted info</h1>
+        <p>Name: {{ name_temp }}</p>
+        <p>Location: {{ location_temp }}</p>
+        <p>Language: {{ language_temp }}</p>
+        <p>Comment: {{ comments_temp }}</p>
+        <button type="submit">Go Back</button>
+    </form>
+</div>
+{% endblock content %}    
